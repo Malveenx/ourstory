@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>For Someone Very Special ❤️</title>
+<title>For My Prarona ❤️</title>
 <style>
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  background: linear-gradient(to right, #ff758c, #ff7eb3);
   text-align: center;
   color: white;
+  overflow: hidden;
 }
 
 .container {
-  margin-top: 15%;
+  margin-top: 10%;
   padding: 20px;
 }
 
@@ -24,7 +25,12 @@ button {
   font-size: 18px;
   border-radius: 30px;
   cursor: pointer;
-  margin-top: 20px;
+  margin: 10px;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
 }
 
 .hidden {
@@ -33,8 +39,19 @@ button {
   font-size: 22px;
 }
 
+#yesBtn {
+  background: #00ffae;
+  color: black;
+}
+
+#noBtn {
+  position: absolute;
+  background: #ff4d6d;
+  color: white;
+}
+
 .heart {
-  font-size: 40px;
+  font-size: 45px;
   animation: beat 1s infinite;
 }
 
@@ -48,16 +65,23 @@ button {
 
 <body>
 <div class="container">
-  <h1>Hey Beautiful ❤️</h1>
-  <p>I made this little page just for you...</p>
+  <h1>Hey Prarona ❤️</h1>
+  <p>This page exists for one reason… you.</p>
 
-  <button onclick="next()">Click Me 💌</button>
+  <button onclick="next()">Tap here, love 💌</button>
 
-  <div id="step1" class="hidden">From the moment you came into my life, everything felt brighter ✨</div>
-  <div id="step2" class="hidden">Your smile is my favorite place to be 😊</div>
-  <div id="step3" class="hidden">Every memory with you is my treasure 💎</div>
-  <div id="step4" class="hidden heart">I Love You ❤️</div>
+  <div id="step1" class="hidden">From the day you walked into my life, everything changed ✨</div>
+  <div id="step2" class="hidden">Your smile is my favorite notification 😊</div>
+  <div id="step3" class="hidden">Every moment with you feels like magic 💫</div>
+  <div id="step4" class="hidden heart">I Love You So Much Prarona ❤️</div>
   <div id="step5" class="hidden">Will you be mine forever? 💍</div>
+
+  <div id="buttons" class="hidden">
+    <button id="yesBtn" onclick="yes()">YESSS 💖</button>
+    <button id="noBtn" onmouseover="moveNo()">No 🙈</button>
+  </div>
+
+  <div id="result" class="hidden heart">YAYYY!! You just made me the happiest person alive 😭❤️</div>
 </div>
 
 <script>
@@ -65,6 +89,20 @@ let step = 0;
 function next() {
   step++;
   document.getElementById("step" + step).style.display = "block";
+  if(step === 5){
+    document.getElementById("buttons").style.display = "block";
+  }
+}
+
+function yes() {
+  document.getElementById("buttons").style.display = "none";
+  document.getElementById("result").style.display = "block";
+}
+
+function moveNo() {
+  let btn = document.getElementById("noBtn");
+  btn.style.top = Math.random() * window.innerHeight + "px";
+  btn.style.left = Math.random() * window.innerWidth + "px";
 }
 </script>
 
