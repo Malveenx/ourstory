@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For Someone Very Special ❤️</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  text-align: center;
+  color: white;
+}
+
+.container {
+  margin-top: 15%;
+  padding: 20px;
+}
+
+button {
+  background: white;
+  color: #ff4d6d;
+  border: none;
+  padding: 15px 25px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+  margin-top: 20px;
+  font-size: 22px;
+}
+
+.heart {
+  font-size: 40px;
+  animation: beat 1s infinite;
+}
+
+@keyframes beat {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.2);}
+  100% {transform: scale(1);}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+  <h1>Hey Beautiful ❤️</h1>
+  <p>I made this little page just for you...</p>
+
+  <button onclick="next()">Click Me 💌</button>
+
+  <div id="step1" class="hidden">From the moment you came into my life, everything felt brighter ✨</div>
+  <div id="step2" class="hidden">Your smile is my favorite place to be 😊</div>
+  <div id="step3" class="hidden">Every memory with you is my treasure 💎</div>
+  <div id="step4" class="hidden heart">I Love You ❤️</div>
+  <div id="step5" class="hidden">Will you be mine forever? 💍</div>
+</div>
+
+<script>
+let step = 0;
+function next() {
+  step++;
+  document.getElementById("step" + step).style.display = "block";
+}
+</script>
+
+</body>
+</html>
